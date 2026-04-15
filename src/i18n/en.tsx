@@ -14,7 +14,7 @@ export const en: Translations = {
     heading2: "digital",
     heading3: "experiences with",
     heading4: "precision.",
-    description: "— a Full Stack Software Engineering student at UCC. I'm passionate about building scalable, high-performance applications with dynamic JavaScript frontends and robust C#/Java backends. I also design interactive videogames and focus on creating innovative, user-centered solutions with strong attention to detail.",
+    description: "Hi, I'm Valentina Burbano, a Full Stack Software Engineering student at UCC. I'm passionate about building scalable, high-performance applications with dynamic JavaScript frontends and robust C#/Java backends. I also design interactive videogames and focus on creating innovative, user-centered solutions with strong attention to detail.",
     name: "Valentina Burbano",
     contactMe: "Contact Me",
     downloadCV: "Download CV",
