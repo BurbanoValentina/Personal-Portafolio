@@ -2,7 +2,7 @@
 
 Portfolio personal construido con **React 19 + TypeScript + Tailwind CSS v4 + Vite**.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 ```mermaid
 graph TB
@@ -14,7 +14,7 @@ graph TB
     A --> G["React Context<br/>Theme & Language"]
 ```
 
-## 📦 Instalación y Desarrollo
+## Instalación y Desarrollo
 
 ```bash
 # Instalar dependencias
@@ -33,7 +33,7 @@ npm run preview
 npm run lint
 ```
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```mermaid
 graph TB
@@ -66,7 +66,7 @@ graph TB
     Utils --> Utilities["Helper Functions"]
 ```
 
-## 🎨 Flujo de la Aplicación
+## Flujo de la Aplicación
 
 ```mermaid
 sequenceDiagram
@@ -84,7 +84,7 @@ sequenceDiagram
     Layout-->>App: Composite App
 ```
 
-## 🏗️ Arquitectura de Componentes
+## Arquitectura de Componentes
 
 ```mermaid
 graph TD
@@ -112,18 +112,18 @@ graph TD
     style LangToggle fill:#ec4899,color:#fff
 ```
 
-## ✨ Características Principales
+## Características Principales
 
 | Característica | Estado | Descripción |
 |---|---|---|
-| 🌙 Modo Oscuro/Claro | ✅ | Tema alternante con Context API |
-| 🌍 Internacionalización | ✅ | ES/EN soportados |
-| 📱 Responsive Design | ✅ | Tailwind CSS + Mobile-first |
-| 🔒 Type-Safe | ✅ | TypeScript en 100% del código |
-| ⚡ Rendimiento | ✅ | Vite + Optimizaciones |
-| ♿ Accesibilidad | ✅ | Semántica HTML correcta |
+| Modo Oscuro/Claro | Habilitado | Tema alternante con Context API |
+| Internacionalización | Habilitada | ES/EN soportados |
+| Responsive Design | Habilitado | Tailwind CSS + Mobile-first |
+| Type-Safe | Habilitado | TypeScript en 100% del código |
+| Rendimiento | Optimizado | Vite + Optimizaciones |
+| Accesibilidad | Habilitada | Semántica HTML correcta |
 
-## 📊 Dependencias Clave
+## Dependencias Clave
 
 ```mermaid
 pie title Composición del Proyecto
@@ -133,14 +133,14 @@ pie title Composición del Proyecto
     "Dev Tools (ESLint, Vite)" : 20
 ```
 
-## 🚀 Despliegue
+## Despliegue
 
 El proyecto está optimizado para despliegue en plataformas modernas:
-- **Vercel** - Recomendado
-- **Netlify**
-- **GitHub Pages**
-- **AWS Amplify**
+- Vercel (Recomendado)
+- Netlify
+- GitHub Pages
+- AWS Amplify
 
 ---
 
-**Desarrollado por Valentina Burbano** | 2025
+**Desarrollado por Valentina Burbano** | 2026
