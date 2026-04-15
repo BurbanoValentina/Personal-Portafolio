@@ -3,29 +3,20 @@
 @theme {
   --color-background: #0f1418;
   --color-foreground: #f0f2f5;
-
   --color-card: #141a1f;
-  
   --color-primary: #20b2a6;
   --color-primary-foreground: #ffffff;
-
   --color-secondary: #1f2830;
   --color-secondary-foreground: #20b2a6;
-
   --color-muted: #252e37;
   --color-muted-foreground: #7a8491;
-
   --color-border: #242b32;
-
   --radius: 0.75rem;
-
   --color-highlight: #f5a613;
   --color-surface: #1a2329;
-
 }
 
 @layer base {
-  
   html {
     scroll-behavior: smooth;
   }
@@ -37,6 +28,26 @@
     background-image:
       radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--color-primary) 8%, transparent) 1px, transparent 0);
     background-size: 40px 40px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  /* ── Light Theme Overrides ── */
+  [data-theme="light"] body {
+    --color-background: #f5f7fa;
+    --color-foreground: #1a1a2e;
+    --color-card: #ffffff;
+    --color-primary: #0d9488;
+    --color-primary-foreground: #ffffff;
+    --color-secondary: #e8ecf1;
+    --color-secondary-foreground: #0d9488;
+    --color-muted: #dfe3e8;
+    --color-muted-foreground: #64748b;
+    --color-border: #d1d5db;
+    --color-surface: #ffffff;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    background-image:
+      radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--color-primary) 6%, transparent) 1px, transparent 0);
   }
 
   ::selection {
@@ -49,136 +60,83 @@
   }
 }
 
+@utility container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @layer components {
-  .glass { 
+  .glass {
     background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
     backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
   }
 
-  .glass-strong { 
+  .glass-strong {
     background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
     backdrop-filter: blur(24px);
     border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
   }
 }
 
-  .glow-text {
-    text-shadow: 0 0 30px
-    color-mix(in srgb, var(--color-primary) 50%, transparent);
-  }
+.glow-text {
+  text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
 
-  .glow-border {
-    box-shadow: 0 0 20px
-    color-mix(in srgb, var(--color-primary) 20%, transparent),
+.glow-border {
+  box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
     inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
-  }
-
+}
 
 @layer utilities {
-
   @keyframes fade-in {
-    from {
-      opacity: 0;
-      filter: blur(10px);
-      transform: translateY(20px);
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-      filter: blur(0);
-    }
+    from { opacity: 0; filter: blur(10px); transform: translateY(20px); }
+    to { transform: translateY(0); opacity: 1; filter: blur(0); }
   }
 
   @keyframes slow-drift {
-    0%,
-    100% {
-      transform: translate(0, 0);
-    }
-    25% {
-      transform: translate(20px, -30px);
-    }
-    50% {
-      transform: translate(30px, 10px);
-    }
-    75% {
-      transform: translate(30px, 10px);
-    }
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(20px, -30px); }
+    50% { transform: translate(30px, 10px); }
+    75% { transform: translate(30px, 10px); }
   }
 
   @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
-  .animate-fade-in {
-    animation: fade-in 0.8s ease-out both;
-  }
+  .animate-fade-in { animation: fade-in 0.8s ease-out both; }
+  .animate-float { animation: float 4s ease-in-out infinite; }
 
-  .animate-float {
-    animation: float 4s ease-in-out infinite;
-  }
-
-  .animate-delay-100 {
-    animation-delay: 100ms;
-  }
-  .animate-delay-200 {
-    animation-delay: 200ms;
-  }
-  .animate-delay-300 {
-    animation-delay: 300ms;
-  }
-  .animate-delay-400 {
-    animation-delay: 400ms;
-  }
-  .animate-delay-500 {
-    animation-delay: 500ms;
-  }
-  .animate-delay-600 {
-    animation-delay: 600ms;
-  }
-  .animate-delay-700 {
-    animation-delay: 700ms;
-  }
-  .animate-delay-800 {
-    animation-delay: 800ms;
-  }
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-600 { animation-delay: 600ms; }
 
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
 
-  .animate-marquee {
-    animation: marquee 30s linear infinite;
-  }
-
-  .animate-marquee:hover {
-    animation-play-state: paused;
-  }
+  .animate-marquee { animation: marquee 30s linear infinite; }
+  .animate-marquee:hover { animation-play-state: paused; }
 
   @keyframes animated-border {
-    0%{
-      stroke-dashoffset: 0;
-    }
-    100% {
-      stroke-dashoffset: -456;
-    }
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -456; }
   }
 
   .group:hover .animated-border-path {
     animation: animated-border 1.5s linear infinite;
   }
 
-  .animated-border:hover{
+  .animated-border:hover {
     background-color: color-mix(in srgb, #26c4b8 15%, transparent);
     backdrop-filter: blur(16px);
     box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
   }
 }
-
