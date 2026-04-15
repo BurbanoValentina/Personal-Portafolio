@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { AnimatedBorderButton, Button } from "@/components/common";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -7,8 +6,8 @@ import { useLang } from "@/i18n";
 interface Dot {
   left: number;
   top: number;
-  duration: number;
   delay: number;
+  duration: number;
 }
 
 interface SocialLink {
@@ -28,18 +27,38 @@ const socialLinks: SocialLink[] = [
   { icon: Linkedin, href: "https://www.linkedin.com/in/valentina-burbano-salazar-2473a2327/" },
 ];
 
-const generateDots = (): Dot[] => {
-  return [...Array(30)].map((_, index) => ({
-    left: (index * 3.33) % 100,
-    top: (index * 1.67) % 100,
-    duration: 25 + (index % 10),
-    delay: 0,
-  }));
+const generateSpacedDots = (): Dot[] => {
+  const dots: Dot[] = [];
+  const minDistance = 15; // Distancia mínima entre puntos en porcentaje
+  
+  while (dots.length < 20) {
+    const newDot = {
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      delay: Math.random() * 5,
+      duration: 15 + Math.random() * 10,
+    };
+    
+    // Verificar distancia con puntos existentes
+    const isFarEnough = dots.every(dot => {
+      const distance = Math.sqrt(
+        Math.pow(newDot.left - dot.left, 2) + Math.pow(newDot.top - dot.top, 2)
+      );
+      return distance >= minDistance;
+    });
+    
+    if (isFarEnough) {
+      dots.push(newDot);
+    }
+  }
+  
+  return dots;
 };
+
+const animatedDots: Dot[] = generateSpacedDots();
 
 export const Hero = (): React.JSX.Element => {
   const { t } = useLang();
-  const dots: Dot[] = useMemo(() => generateDots(), []);
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
@@ -49,9 +68,9 @@ export const Hero = (): React.JSX.Element => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
       </div>
 
-      {/* Green dots */}
+      {/* Static green dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {dots.map((dot, i) => (
+        {animatedDots.map((dot, i) => (
           <div key={i} className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
