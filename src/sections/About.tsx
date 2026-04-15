@@ -1,4 +1,4 @@
-import { useLang } from "@/contexts/LanguageContext";
+import { useLang } from "@/i18n";
 
 const valueIcons: string[] = ["code", "speed", "group", "lightbulb"];
 

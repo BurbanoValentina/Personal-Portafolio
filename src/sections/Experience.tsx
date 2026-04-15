@@ -1,4 +1,4 @@
-import { useLang } from "@/contexts/LanguageContext";
+import { useLang } from "@/i18n";
 
 export const Experience = (): React.JSX.Element => {
   const { t } = useLang();
@@ -26,7 +26,7 @@ export const Experience = (): React.JSX.Element => {
         {/* ── Experience Timeline ── */}
         <div className="relative mb-16 lg:mb-32">
           {/* Line: left edge on mobile, center on lg */}
-          <div className="absolute left-2 lg:left-1/2 top-0 bottom-0 w-px lg:-translate-x-1/2 bg-gradient-to-b from-primary via-border to-transparent" />
+          <div className="absolute left-2 lg:left-1/2 top-0 bottom-0 w-px lg:-translate-x-1/2 bg-linear-to-b from-primary via-border to-transparent" />
 
           <div className="space-y-8">
             {t.experience.items.map((exp, idx) => {
@@ -98,7 +98,7 @@ export const Experience = (): React.JSX.Element => {
         {/* ── Certifications Timeline ── */}
         <div className="relative">
           {/* Line: left edge on mobile, center on lg */}
-          <div className="absolute left-2 lg:left-1/2 top-0 bottom-0 w-px lg:-translate-x-1/2 bg-gradient-to-b from-primary via-border to-transparent" />
+          <div className="absolute left-2 lg:left-1/2 top-0 bottom-0 w-px lg:-translate-x-1/2 bg-linear-to-b from-primary via-border to-transparent" />
 
           <div className="space-y-8">
             {t.experience.certs.map((cert, idx) => {

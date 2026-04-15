@@ -3,7 +3,7 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { Button } from "@/components/Button";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { useLang } from "@/contexts/LanguageContext";
+import { useLang } from "@/i18n";
 
 interface Dot {
   left: number;
@@ -29,24 +29,25 @@ const socialLinks: SocialLink[] = [
   { icon: Linkedin, href: "https://www.linkedin.com/in/valentina-burbano-salazar-2473a2327/" },
 ];
 
+const generateDots = (): Dot[] => {
+  return [...Array(30)].map((_, index) => ({
+    left: (index * 3.33) % 100,
+    top: (index * 1.67) % 100,
+    duration: 15 + (index % 20),
+    delay: (index % 5),
+  }));
+};
+
 export const Hero = (): React.JSX.Element => {
   const { t } = useLang();
-
-  const dots: Dot[] = useMemo(() => {
-    return [...Array(30)].map(() => ({
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      duration: 15 + Math.random() * 20,
-      delay: Math.random() * 5,
-    }));
-  }, []);
+  const dots: Dot[] = useMemo(() => generateDots(), []);
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img src="/hero-bg.webp" alt="Hero background" fetchPriority="high" decoding="async" className="w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
       </div>
 
       {/* Green dots */}
@@ -114,7 +115,7 @@ export const Hero = (): React.JSX.Element => {
           {/* Right Column — image: first on mobile, right on desktop */}
           <div className="relative animate-fade-in animate-delay-300 order-1 lg:order-2">
             <div className="relative max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
+              <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img src="/Profile-Photo.webp" alt="Valentina Burbano" fetchPriority="high" decoding="async" className="w-full aspect-4/5 object-cover rounded-2xl" />
                 <div className="absolute -bottom-4 right-4 glass rounded-xl px-4 py-3 animate-float">
@@ -138,8 +139,8 @@ export const Hero = (): React.JSX.Element => {
             {t.hero.techTitle}
           </p>
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-linear-to-r from-background to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-linear-to-l from-background to-transparent z-10" />
             <div className="flex gap-6 animate-marquee whitespace-nowrap">
               {[...skills, ...skills].map((skill, idx) => (
                 <span key={idx}

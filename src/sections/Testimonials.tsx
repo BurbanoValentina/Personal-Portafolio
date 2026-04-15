@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { useLang } from "@/contexts/LanguageContext";
+import { useLang } from "@/i18n";
 
 export const Testimonials = (): React.JSX.Element => {
   const [active, setActive] = useState<number>(0);
@@ -34,12 +34,12 @@ export const Testimonials = (): React.JSX.Element => {
               <Quote className="w-6 h-6 text-primary" />
             </div>
 
-            <blockquote className="text-xl md:text-2xl leading-relaxed text-foreground mb-8 min-h-[120px]">
+            <blockquote className="text-xl md:text-2xl leading-relaxed text-foreground mb-8 min-h-30">
               "{testimonials[active].quote}"
             </blockquote>
 
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center text-sm font-bold text-white">
+              <div className="w-12 h-12 rounded-full bg-linear-to-br from-primary to-primary/50 flex items-center justify-center text-sm font-bold text-white">
                 {testimonials[active].initials}
               </div>
               <div>

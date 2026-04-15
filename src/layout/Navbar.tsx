@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
-import { useLang } from "@/contexts/LanguageContext";
+import { useLang } from "@/i18n";
 import "flag-icons/css/flag-icons.min.css";
 
 export const Navbar = (): React.JSX.Element => {

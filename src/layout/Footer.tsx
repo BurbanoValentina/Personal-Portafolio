@@ -1,4 +1,4 @@
-import { useLang } from "@/contexts/LanguageContext";
+import { useLang } from "@/i18n";
 
 export const Footer = (): React.JSX.Element => {
   const { t } = useLang();
