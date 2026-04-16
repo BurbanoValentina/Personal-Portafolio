@@ -63,7 +63,7 @@ const generateSpacedDots = (count: number = 15): Dot[] => {
 export const Hero = memo((): React.JSX.Element => {
   const { t } = useLang();
   const { theme } = useTheme();
-  const profilePhoto = theme === "light" ? "/images/Profile-Photo2.png" : "/images/profile-photo.webp";
+  const profilePhoto = theme === "light" ? "/images/profile-photo2.webp" : "/images/profile-photo.webp";
   
   // Memoizar los dots - reducidos a 15 para mejor rendimiento
   const animatedDots = useMemo(() => generateSpacedDots(15), []);
@@ -104,16 +104,14 @@ export const Hero = memo((): React.JSX.Element => {
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight animate-fade-in animate-delay-100">
+              <h1 className="text-[clamp(1.5rem,4.5vw,3.5rem)] lg:text-6xl font-bold leading-tight animate-fade-in animate-delay-100">
                 {t.hero.heading1}
                 <span className="text-primary glow-text font-extrabold">{t.hero.heading2}</span>
-                <br />
-                {t.hero.heading3}
-                <br />
-                <span className="italic font-normal font-serif text-foreground">{t.hero.heading4}</span>
+                {" "}{t.hero.heading3}
+                {" "}<span className="italic font-normal font-serif text-foreground">{t.hero.heading4}</span>
               </h1>
 
-              <p className="text-base md:text-lg text-muted-foreground max-w-lg animate-fade-in animate-delay-200">
+              <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-muted-foreground max-w-none lg:max-w-lg animate-fade-in animate-delay-200">
                 {t.hero.description}
               </p>
             </div>
