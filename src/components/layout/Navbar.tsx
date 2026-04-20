@@ -15,8 +15,10 @@ export const Navbar = memo((): React.JSX.Element => {
   const navLinks = [
     { href: "#about", label: t.nav.about },
     { href: "#projects", label: t.nav.projects },
-    { href: "#experience", label: t.nav.experience },
+    { href: "#certifications", label: t.nav.certifications },
+    { href: "#process", label: t.nav.evolution },
     { href: "#testimonials", label: t.nav.testimonials },
+    { href: "#services", label: t.nav.services },
     { href: "#footer", label: t.nav.contact },
   ];
 
@@ -58,7 +60,7 @@ export const Navbar = memo((): React.JSX.Element => {
         </a>
 
         {/* Desktop Nav — Center pills including Contact */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden min-[875px]:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navLinks.map((link, index) => (
               <a
@@ -73,7 +75,7 @@ export const Navbar = memo((): React.JSX.Element => {
         </div>
 
         {/* Right — Theme toggle + Language toggle */}
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden min-[875px]:flex items-center gap-2">
           {/* Dark/Light toggle */}
           <button
             onClick={toggleTheme}
@@ -97,7 +99,7 @@ export const Navbar = memo((): React.JSX.Element => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-foreground cursor-pointer"
+          className="min-[875px]:hidden p-2 text-foreground cursor-pointer"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -115,7 +117,7 @@ export const Navbar = memo((): React.JSX.Element => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-strong animate-fade-in relative z-50">
+        <div className="min-[875px]:hidden glass-strong animate-fade-in relative z-50">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {navLinks.map((link, index) => (
               <a
