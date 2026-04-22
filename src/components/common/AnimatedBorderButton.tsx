@@ -1,10 +1,18 @@
 import { Download } from "lucide-react";
+import { useLang } from "@/i18n";
 
 export const AnimatedBorderButton = (): React.JSX.Element => {
+  const { lang, t } = useLang();
+
+  const cvFile =
+    lang === "es"
+      ? "Valentina Burbano FullStack Ingenieria de Software.pdf"
+      : "Valentina Burbano FullStack Software Engineering.pdf";
+
   return (
     <a
-      href="/Valentina Burbano FullStack Software Engineering.pdf"
-      download="Valentina Burbano FullStack Software Engineering.pdf"
+      href={`/${encodeURIComponent(cvFile)}`}
+      download={cvFile}
       className="relative bg-transparent border border-border
                 text-foreground hover:border-primary/50 transition-all
                 duration-1000 focus:outline-none focus-visible:ring-2
@@ -34,7 +42,7 @@ export const AnimatedBorderButton = (): React.JSX.Element => {
       </svg>
       <span className="relative flex items-center justify-center gap-2">
         <Download className="w-5 h-5" />
-        Download CV
+        {t.hero.downloadCV}
       </span>
     </a>
   );
