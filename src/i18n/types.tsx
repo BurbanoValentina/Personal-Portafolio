@@ -62,7 +62,8 @@ export interface Translations {
     label: string;
     title1: string;
     titleHighlight: string;
-    items: { quote: string; name: string; role: string; initials: string }[];
+    subtitle: string;
+    items: { quote: string; name: string; role: string; initials: string; avatar: string }[];
   };
   services: {
     label: string;
@@ -114,6 +115,54 @@ export interface Translations {
       text: string;
       detail: string;
     }[];
+  };
+  contact: {
+    label: string;
+    title1: string;
+    titleHighlight: string;
+    subtitle: string;
+    fields: {
+      name: string;
+      email: string;
+      phone: string;
+      subject: string;
+      message: string;
+      namePlaceholder: string;
+      emailPlaceholder: string;
+      phonePlaceholder: string;
+      subjectPlaceholder: string;
+      messagePlaceholder: string;
+    };
+    send: string;
+    sending: string;
+    successMsg: string;
+    errorMsg: string;
+    emailBtn: string;
+    whatsappBtn: string;
+    availabilityTitle: string;
+    availabilityText: string;
+    availabilityText2: string;
+    availableNow: string;
+    validation: {
+      nameRequired: string;
+      nameMin: string;
+      nameMax: string;
+      nameInvalid: string;
+      nameRepeat: string;
+      emailRequired: string;
+      emailInvalid: string;
+      emailTooLong: string;
+      phoneDigitsOnly: string;
+      phoneLength: string;
+      phoneRepeat: string;
+      subjectRequired: string;
+      subjectMin: string;
+      subjectMax: string;
+      subjectRepeat: string;
+      messageRequired: string;
+      messageMin: string;
+      messageMax: string;
+    };
   };
   footer: {
     rights: string;
