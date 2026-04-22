@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Navbar, Footer } from "@/components";
-import { Hero, About, Experience, Projects, Testimonials, ProcessAndGrowth, ServicesAndFAQ } from "@/components";
+import { Hero, About, Experience, Projects, Testimonials, ProcessAndGrowth, ServicesAndFAQ, Contact } from "@/components";
 
 function App(): React.JSX.Element {
   return (
@@ -9,7 +9,7 @@ function App(): React.JSX.Element {
       <LanguageProvider>
         <div className="min-h-screen overflow-x-hidden">
           <Navbar />
-          <main>
+          <main className="content-format">
             <Hero />
             <About />
             <Projects />
@@ -17,6 +17,7 @@ function App(): React.JSX.Element {
             <ProcessAndGrowth />
             <Testimonials />
             <ServicesAndFAQ />
+            <Contact />
           </main>
           <Footer />
         </div>
