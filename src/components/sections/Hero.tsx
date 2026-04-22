@@ -116,7 +116,7 @@ export const Hero = memo((): React.JSX.Element => {
             </div>
 
             <div className="flex flex-wrap gap-3 md:gap-4 animate-fade-in animate-delay-300">
-              <a href="#footer">
+              <a href="#contact">
                 <Button size="lg">
                   {t.hero.contactMe} <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
