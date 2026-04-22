@@ -25,6 +25,8 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: 'Outfit', sans-serif;
+    line-height: 1.55;
+    letter-spacing: 0.005em;
     background-image:
       radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--color-primary) 8%, transparent) 1px, transparent 0);
     background-size: 40px 40px;
@@ -60,6 +62,17 @@
   .font-serif {
     font-family: 'Playfair Display', serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  p, li {
+    line-height: 1.72;
+    text-wrap: pretty;
+  }
 }
 
 @utility container {
@@ -69,6 +82,18 @@
 }
 
 @layer components {
+  .content-format section {
+    scroll-margin-top: 110px;
+  }
+
+  .content-format p {
+    max-width: 72ch;
+  }
+
+  .content-format .container {
+    text-rendering: optimizeLegibility;
+  }
+
   .glass {
     background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
     backdrop-filter: blur(8px);
