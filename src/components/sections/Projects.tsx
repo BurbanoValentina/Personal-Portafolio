@@ -103,16 +103,22 @@ export const Projects = memo((): React.JSX.Element => {
 
                     {/* Links */}
                     <div className="flex items-center gap-4">
-                      {meta.github && (
+                      {meta.github && !meta.githubBackend && (
                         <a href={meta.github} target="_blank" rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
-                          <Github className="w-4 h-4" /> Frontend
+                          <Github className="w-4 h-4" /> GitHub
+                        </a>
+                      )}
+                      {meta.github && meta.githubBackend && (
+                        <a href={meta.github} target="_blank" rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
+                          <Github className="w-4 h-4" /> GitHub Frontend
                         </a>
                       )}
                       {meta.githubBackend && (
                         <a href={meta.githubBackend} target="_blank" rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
-                          <Github className="w-4 h-4" /> Backend
+                          <Github className="w-4 h-4" /> GitHub Backend
                         </a>
                       )}
                       {meta.live && (
