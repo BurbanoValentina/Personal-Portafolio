@@ -23,6 +23,12 @@ npm install
 # Servidor de desarrollo
 npm run dev
 
+# API local (SQLite) para formulario de contacto
+npm run api
+
+# Frontend + API en paralelo
+npm run dev:full
+
 # Build producción
 npm run build
 
@@ -32,6 +38,15 @@ npm run preview
 # Lint
 npm run lint
 ```
+
+## Contacto con SQLite local
+
+- Endpoint: `POST /api/contact`
+- Servidor API: `http://localhost:8787`
+- Base de datos: `data/contacts.sqlite`
+- Tabla: `contact_messages`
+
+Si quieres usar otro host/puerto para la API desde el frontend, define `VITE_API_URL`.
 
 ## Estructura del Proyecto
 
